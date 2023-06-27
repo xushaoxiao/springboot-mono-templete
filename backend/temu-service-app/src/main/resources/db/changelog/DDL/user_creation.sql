@@ -1,0 +1,20 @@
+CREATE TABLE user(
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY COMMENT 'primary key',
+    uid VARCHAR(64) NOT NULL COMMENT 'user id, unique',
+    email VARCHAR(64) NOT NULL COMMENT 'user have to register via email',
+    username VARCHAR(64) NOT NULL COMMENT 'username, will be specified by system if user have not provided',
+    nickname VARCHAR(64) NOT NULL COMMENT 'nickname, will be specified by system if user have not provided',
+    email_code VARCHAR(32) DEFAULT NULL COMMENT 'register code cache',
+    password_salt VARCHAR(32) DEFAULT NULL COMMENT 'register password_salt',
+    password_hash VARCHAR(32) DEFAULT NULL COMMENT 'register password_hash',
+    email_verified INT DEFAULT '0' COMMENT 'email_verified',
+    type INT NOT NULL COMMENT 'type [0, 1, 2]',
+    last_access_at BIGINT NOT NULL COMMENT 'timestamp of user last access',
+    deleted_at TIMESTAMP DEFAULT NULL,
+    created_by VARCHAR(64),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_by VARCHAR(64),
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    UNIQUE KEY user_unique_index_uid(uid),
+    UNIQUE KEY user_unique_index_email(email)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;

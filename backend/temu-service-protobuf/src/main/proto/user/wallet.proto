@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package com.lightning.temu.core.protobuf.generated;
+
+option java_package = "com.lightning.temu.core.protobuf.generated";
+option java_multiple_files = true;
+option java_outer_classname = "WalletProto";
+
+message Wallet {
+  uint64 id = 1;
+  string card_no = 2; // card num.
+  string user_uid = 3;
+  uint64 balance_one = 4;
+  uint64 balance_one_available = 5;
+  uint64 balance_one_frozen = 6;
+  uint64 balance_two = 7;
+  uint64 balance_two_available = 8;
+  uint64 balance_two_frozen = 9;
+  bool trade_allowed = 10;
+  string trade_password = 11;
+}

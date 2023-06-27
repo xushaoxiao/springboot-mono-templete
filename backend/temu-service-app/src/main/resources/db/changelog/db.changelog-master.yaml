@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: liquibase_automation
+  ##### DDL #####
+  - include:
+      file: DDL/user_creation.sql
+      relativeToChangelogFile: true
+
+  ##### DML #####
+#  - include:
+#      file: DML/delivery_cities_initialization.sql
+#      relativeToChangelogFile: true
