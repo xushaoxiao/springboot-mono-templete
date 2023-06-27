@@ -1,0 +1,38 @@
+Configuration:
+  name: Default
+  Properties:
+    Property:
+      - name: filename
+        value: logs/app.log
+      - name: log_pattern
+        value: "%d{dd-MM-yyyy HH:mm:ss.SSS} [%t] %-5level %logger{36}.%M - %m%n"
+  Appenders:
+    Console:
+      name: Console_Appender
+      target: SYSTEM_OUT
+      PatternLayout:
+        pattern: ${log_pattern}
+    File:
+      name: File_Appender
+      filename: ${filename}
+      append: true
+      PatternLayout:
+        pattern: ${log_pattern}
+      Filters:
+        ThresholdFilter:
+          level: info
+          onMatch: ACCEPT
+          onMismatch: DENY
+  Loggers:
+    Logger:
+      - name: com.tesla
+        level: info
+        additivity: false
+        AppenderRef:
+          - ref: Console_Appender
+          - ref: File_Appender
+    Root:
+      level: info
+      AppenderRef:
+        - ref: Console_Appender
+        - ref: File_Appender
