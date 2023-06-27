@@ -4,7 +4,7 @@
 
 Run build:
 ```sh
-mvn package
+mvn clean package
 ```
 
 # Development Guide
