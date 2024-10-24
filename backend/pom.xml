@@ -7,7 +7,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.1.1</version>
+        <version>3.3.5</version>
     </parent>
 
     <modules>
@@ -60,7 +60,7 @@
         <protobuf.version>3.19.1</protobuf.version>
         <protobuf-plugin.version>0.6.1</protobuf-plugin.version>
         <grpc.version>1.53.0</grpc.version>
-        <springboot.version>3.1.1</springboot.version>
+        <springboot.version>3.3.5</springboot.version>
 
         <protobufIncludes>**/*.proto</protobufIncludes>
     </properties>
@@ -81,7 +81,7 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-actuator</artifactId>
-                <version>3.1.0</version>
+                <version>3.3.5</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
